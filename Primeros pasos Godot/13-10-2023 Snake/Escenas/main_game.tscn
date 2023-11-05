@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://caxvbrmg032x3"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/main_game.gd" id="1_lwcir"]
+[ext_resource type="Texture2D" uid="uid://cn1f4kfjj8hu7" path="res://Recursos/Graphics/Snake_spritesheet.png" id="1_nk10s"]
+[ext_resource type="Texture2D" uid="uid://cumgyvvhtx1lj" path="res://Recursos/Graphics/apple.png" id="3_rivxf"]
+[ext_resource type="Texture2D" uid="uid://ddh5feyyv7evl" path="res://Recursos/Graphics/grass.png" id="4_fyfon"]
+[ext_resource type="PackedScene" uid="uid://l3e14drvi8da" path="res://Escenas/poentaro.tscn" id="5_nt1xa"]
+[ext_resource type="AudioStream" uid="uid://d3msccsh3mfxx" path="res://Recursos/Sound/crunch.wav" id="6_ob4fl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pg4q8"]
+texture = ExtResource("1_nk10s")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4aqcu"]
+texture = ExtResource("3_rivxf")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_020s3"]
+tile_size = Vector2i(40, 40)
+sources/0 = SubResource("TileSetAtlasSource_pg4q8")
+sources/1 = SubResource("TileSetAtlasSource_4aqcu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewy3d"]
+texture = ExtResource("4_fyfon")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1um3o"]
+sources/0 = SubResource("TileSetAtlasSource_ewy3d")
+
+[node name="MainGame" type="Node"]
+script = ExtResource("1_lwcir")
+
+[node name="SerpentoPomo" type="TileMap" parent="."]
+z_index = 1
+tile_set = SubResource("TileSet_020s3")
+cell_quadrant_size = 40
+format = 2
+
+[node name="SerpentoTiktako" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Herbo" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource("TileSet_1um3o")
+cell_quadrant_size = 40
+format = 2
+layer_0/tile_data = PackedInt32Array(3080199, 0, 0, 3080204, 0, 0, 3080209, 0, 0, 3080214, 0, 0, 3080219, 0, 0, 3080224, 0, 0, 3080229, 0, 0, 3080234, 0, 0, 3080239, 0, 0, 2752559, 0, 0, 2424879, 0, 0, 2097199, 0, 0, 1769519, 0, 0, 1441839, 0, 0, 1114159, 0, 0, 786479, 0, 0, 458799, 0, 0, 131119, 0, 0, 131114, 0, 0, 131109, 0, 0, 131104, 0, 0, 131099, 0, 0, 131094, 0, 0, 131089, 0, 0, 131084, 0, 0, 131079, 0, 0, 458759, 0, 0, 458764, 0, 0, 458769, 0, 0, 458774, 0, 0, 458779, 0, 0, 458784, 0, 0, 458789, 0, 0, 458794, 0, 0, 786474, 0, 0, 1114154, 0, 0, 1441834, 0, 0, 1769514, 0, 0, 2097194, 0, 0, 2424874, 0, 0, 2752554, 0, 0, 2752549, 0, 0, 2752544, 0, 0, 2752539, 0, 0, 2752534, 0, 0, 2752529, 0, 0, 2752524, 0, 0, 2752519, 0, 0, 2424839, 0, 0, 2097159, 0, 0, 1769479, 0, 0, 1441799, 0, 0, 1114119, 0, 0, 786439, 0, 0, 786444, 0, 0, 786449, 0, 0, 786454, 0, 0, 786459, 0, 0, 786464, 0, 0, 786469, 0, 0, 1114149, 0, 0, 1441829, 0, 0, 1769509, 0, 0, 2097189, 0, 0, 2424869, 0, 0, 2424864, 0, 0, 2424859, 0, 0, 2424854, 0, 0, 2424849, 0, 0, 2424844, 0, 0, 2097164, 0, 0, 1769484, 0, 0, 1441804, 0, 0, 1114124, 0, 0, 1114129, 0, 0, 1114134, 0, 0, 1114139, 0, 0, 1114144, 0, 0, 1441824, 0, 0, 1769504, 0, 0, 2097184, 0, 0, 2097179, 0, 0, 2097174, 0, 0, 2097169, 0, 0, 1769489, 0, 0, 1441809, 0, 0, 1441814, 0, 0, 1441819, 0, 0, 1769499, 0, 0, 1769494, 0, 0, 3080194, 0, 0, 2752514, 0, 0, 2424834, 0, 0, 2097154, 0, 0, 1769474, 0, 0, 1441794, 0, 0, 1114114, 0, 0, 786434, 0, 0, 458754, 0, 0, 131074, 0, 0)
+
+[node name="Herbo2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fyfon")
+stretch_mode = 1
+
+[node name="Poentaro" parent="." instance=ExtResource("5_nt1xa")]
+
+[node name="KrakaSono" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ob4fl")
+
+[connection signal="timeout" from="SerpentoTiktako" to="." method="_on_serpento_tiktako_timeout"]

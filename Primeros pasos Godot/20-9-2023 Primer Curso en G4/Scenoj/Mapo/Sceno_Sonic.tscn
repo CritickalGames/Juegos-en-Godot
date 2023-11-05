@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn6r7nvqanjpa"]
+
+[ext_resource type="Texture2D" uid="uid://dyu7h273k1564" path="res://Assets/suelito lindo.png" id="1_m2fig"]
+[ext_resource type="PackedScene" uid="uid://w7plvnuisuit" path="res://Scenoj/Asset/Arbo.tscn" id="2_t6o6l"]
+[ext_resource type="PackedScene" uid="uid://cavalt17yfwer" path="res://Scenoj/Mapo/Sonic.tscn" id="3_v5g78"]
+
+[node name="Sceno_Sonic" type="Node2D"]
+y_sort_enabled = true
+
+[node name="SuelitoLindo" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(431, 255)
+scale = Vector2(1.1, 1)
+texture = ExtResource("1_m2fig")
+
+[node name="Arboro" type="Node" parent="."]
+
+[node name="Arbo" parent="Arboro" instance=ExtResource("2_t6o6l")]
+position = Vector2(188, -7)
+
+[node name="Arbo2" parent="Arboro" instance=ExtResource("2_t6o6l")]
+position = Vector2(775, 114)
+
+[node name="Arbo3" parent="Arboro" instance=ExtResource("2_t6o6l")]
+position = Vector2(178, 385)
+
+[node name="Arbo4" parent="Arboro" instance=ExtResource("2_t6o6l")]
+position = Vector2(609, 435)
+
+[node name="Sonic" parent="." instance=ExtResource("3_v5g78")]

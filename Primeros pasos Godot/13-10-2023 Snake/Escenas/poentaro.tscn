@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://l3e14drvi8da"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/poentaro.gd" id="1_klg7o"]
+[ext_resource type="Texture2D" uid="uid://cumgyvvhtx1lj" path="res://Recursos/Graphics/apple.png" id="3_yiipl"]
+
+[node name="Poentaro" type="Node2D" groups=["grupo poentaro"]]
+script = ExtResource("1_klg7o")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pomo" type="TextureButton" parent="HBox"]
+layout_mode = 2
+texture_normal = ExtResource("3_yiipl")
+
+[node name="Poentaro_teksto" type="Label" parent="HBox"]
+layout_mode = 2
+text = "0"

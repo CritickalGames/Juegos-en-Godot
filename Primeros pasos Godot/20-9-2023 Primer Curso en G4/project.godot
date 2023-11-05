@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="20-9-2023 Primer Curso En G4"
+run/main_scene="res://scenoj/Mapo/Sceno_Sonic.tscn"
+config/features=PackedStringArray("4.1", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+MOVIMIENTO="*res://Script/Auto/MOVIMIENTO.gd"
+
+[display]
+
+window/size/viewport_width=864
+window/size/viewport_height=486
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="20-9-2023 Primer Curso En G4"
+
+[physics]
+
+3d/physics_engine="GodotPhysics3D"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

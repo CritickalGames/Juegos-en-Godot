@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://w7plvnuisuit"]
+
+[ext_resource type="Texture2D" uid="uid://dw88wyns4ja5p" path="res://Assets/árbol.png" id="1_5fgky"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knwre"]
+radius = 21.0
+
+[node name="Arbo" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_knwre")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -78)
+scale = Vector2(0.206522, 0.25)
+texture = ExtResource("1_5fgky")
