@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0o8vijdfulhy"]
+
+[ext_resource type="Texture2D" uid="uid://ddh5feyyv7evl" path="res://Recursos/Graphics/grass.png" id="1_prgfa"]
+[ext_resource type="Script" path="res://Escenas/Scripts/parallax_background.gd" id="1_u3f7p"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_u3f7p")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(800, 800)
+
+[node name="Grass" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(401, 400)
+texture = ExtResource("1_prgfa")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 800)
