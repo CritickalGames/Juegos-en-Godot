@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8131fg4rrxc7"]
+
+[ext_resource type="PackedScene" uid="uid://cfpgbt57o7e23" path="res://Escenas/Personajes/KoleraBirdo_1.tscn" id="1_awhq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmlfr"]
+size = Vector2(70, 70)
+
+[node name="MalKorelaMalBirdo_1" instance=ExtResource("1_awhq5")]
+
+[node name="Sprite2D" parent="RigidBody2D" index="0"]
+region_rect = Rect2(70, 140, 70, 70)
+
+[node name="CollisionShape2D" parent="RigidBody2D" index="1"]
+shape = SubResource("RectangleShape2D_vmlfr")

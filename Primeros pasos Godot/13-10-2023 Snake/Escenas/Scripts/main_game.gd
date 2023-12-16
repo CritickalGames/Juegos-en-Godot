@@ -14,9 +14,13 @@ var serpento_korpo_komenca: Array[Vector2]= [Vector2(5,10), Vector2(4,10), Vecto
 var serpento_korpo: Array[Vector2]= serpento_korpo_komenca
 var serpento_direkto: Vector2 = Vector2(1,0)
 var aldonis_pomon: bool = false
+var visible: bool;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Menu_Pausa.visible=false
+	visible = $Menu_Pausa.visible
+	
 	pomo_poz = meti_pomon()
 
 func _process(delta):
@@ -24,6 +28,16 @@ func _process(delta):
 
 func _input(event):
 	var kapo_direkto = rilato2(serpento_korpo[0], serpento_korpo[1])
+	
+	if (Input.is_anything_pressed()) and (event.as_text()=="Escape"):
+		if visible:
+			visible=false
+			$Menu_Pausa.visible=false;
+		else:
+			visible=true
+			$Menu_Pausa.visible=true;
+			get_tree().paused=true
+			
 	match MOVI.get_axis():#Akso akiras la direkton de la sagoj, do supro estas malsupro
 		SUPRO: #MalSupro
 			if not kapo_direkto==SUPRO:
@@ -204,3 +218,11 @@ func restarigi():
 	get_tree().call_group('grupo poentaro', 'wisdatigo_poentaron', 0)
 
 
+
+
+func _on_continuar_pressed():
+	$VBOX_Menu_Pausa.visible=false;
+
+
+func _on_volver_al_menú_pressed():
+	get_tree().change_scene_to_file("res://Escenas/menuInicial.tscn");

@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci7x6on3xilj1"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/menuInicial.gd" id="1_64cso"]
+[ext_resource type="FontFile" uid="uid://bgto1pe7b2ja3" path="res://Recursos/Font/PoetsenOne-Regular.ttf" id="1_n7ehy"]
+[ext_resource type="PackedScene" uid="uid://0o8vijdfulhy" path="res://Escenas/parallax_background.tscn" id="1_xmoy7"]
+[ext_resource type="Texture2D" uid="uid://c5rnto302dlix" path="res://icon.svg" id="2_8x5c8"]
+
+[node name="MenuInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_64cso")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_xmoy7")]
+
+[node name="VBOX_Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -99.0
+offset_right = 64.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="TEXT_RECT_Logo_Juego" type="TextureRect" parent="VBOX_Menu"]
+layout_mode = 2
+texture = ExtResource("2_8x5c8")
+
+[node name="VBOX_Botones" type="VBoxContainer" parent="VBOX_Menu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BTN_Jugar" type="Button" parent="VBOX_Menu/VBOX_Botones"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.713726, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_n7ehy")
+text = "Jugar"
+
+[node name="BTN_Salir" type="Button" parent="VBOX_Menu/VBOX_Botones"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.572549, 0.647059, 1)
+theme_override_fonts/font = ExtResource("1_n7ehy")
+text = "Salir"
+
+[node name="HBOX_Creditos" type="HBoxContainer" parent="."]
+modulate = Color(0.160784, 0, 0.117647, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -56.0
+offset_right = 372.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="VBOX_Columna1" type="VBoxContainer" parent="HBOX_Creditos"]
+layout_mode = 2
+
+[node name="LAB_Titulo" type="Label" parent="HBOX_Creditos/VBOX_Columna1"]
+layout_mode = 2
+text = "Titulo: Snake"
+
+[node name="LAB_Desarrolladora" type="Label" parent="HBOX_Creditos/VBOX_Columna1"]
+layout_mode = 2
+text = "Desarrolladora: Critickal Games"
+
+[node name="VBOX_Columna2" type="VBoxContainer" parent="HBOX_Creditos"]
+layout_mode = 2
+
+[node name="LAB_Director" type="Label" parent="HBOX_Creditos/VBOX_Columna2"]
+layout_mode = 2
+text = "Director: Braiam Rodriguez Marcez(Zg)"
+
+[node name="LAB_Distribuidora" type="Label" parent="HBOX_Creditos/VBOX_Columna2"]
+layout_mode = 2
+text = "Distribuidora: Itch.io"
+
+[node name="VBOX_Columna3" type="VBoxContainer" parent="HBOX_Creditos"]
+layout_mode = 2
+
+[node name="LAB_Artista" type="Label" parent="HBOX_Creditos/VBOX_Columna3"]
+layout_mode = 2
+text = "Artista: Desconozco. "
+
+[node name="LAB_Recursos" type="Label" parent="HBOX_Creditos/VBOX_Columna3"]
+layout_mode = 2
+text = "Recursos: Clear Code YT. "
+
+[connection signal="pressed" from="VBOX_Menu/VBOX_Botones/BTN_Jugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="VBOX_Menu/VBOX_Botones/BTN_Salir" to="." method="_on_btn_salir_pressed"]

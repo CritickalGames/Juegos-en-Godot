@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://c280ef2dyo2ux"]
+
+[ext_resource type="PackedScene" uid="uid://q5rpoof330tc" path="res://Escenas/parallax_background.tscn" id="1_a1ufs"]
+[ext_resource type="TileSet" uid="uid://bkikr31vhmb6x" path="res://Escenas/tiles/nivel_1.tres" id="2_3ov0a"]
+[ext_resource type="PackedScene" uid="uid://c8131fg4rrxc7" path="res://Escenas/Personajes/malKoleraMalBirdo_1.tscn" id="6_xvooo"]
+[ext_resource type="Script" path="res://Escenas/Scripts/Camera2D.gd" id="6_ym5b6"]
+[ext_resource type="PackedScene" uid="uid://csjnv04lyngwp" path="res://Escenas/Personajes/bloko1x3.tscn" id="7_7t5bf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrxox"]
+size = Vector2(20, 853)
+
+[sub_resource type="GDScript" id="GDScript_of7bt"]
+script/source = "extends Node2D
+"
+
+[node name="Nivel1" type="Node2D"]
+position = Vector2(1, 0)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_a1ufs")]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-1, 0)
+tile_set = ExtResource("2_3ov0a")
+cell_quadrant_size = 70
+format = 2
+layer_0/tile_data = PackedInt32Array(131071, 131076, 0, 327679, 131076, 0, 524287, 131076, 0, 720895, 131076, 0, 655360, 8, 65536, 655361, 8, 65536, 655362, 8, 65536, 655363, 8, 65536, 655364, 8, 65536, 655365, 8, 65536, 655366, 8, 65536, 655367, 8, 65536, 655368, 8, 65536, 655369, 8, 65536, 655370, 8, 65536, 655371, 8, 65536, 655372, 8, 65536, 655373, 8, 65536, 655374, 8, 65536, 655375, 8, 65536, 655376, 8, 65536, 655377, 8, 65536, 655378, 8, 65536, 655379, 8, 65536, 655380, 8, 65536, 655381, 8, 65536, 655382, 8, 65536, 655383, 8, 65536, 655384, 8, 65536, 655385, 8, 65536, 655386, 8, 65536)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(-11, 421.5)
+shape = SubResource("RectangleShape2D_yrxox")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TileMap"]
+position = Vector2(1907, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D2"]
+position = Vector2(-11, 421.5)
+shape = SubResource("RectangleShape2D_yrxox")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(388, 361)
+limit_left = 1
+limit_top = 0
+limit_right = 1880
+limit_bottom = 760
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("6_ym5b6")
+
+[node name="Colisionables" type="Node2D" parent="."]
+script = SubResource("GDScript_of7bt")
+
+[node name="Node2D" type="Node2D" parent="Colisionables"]
+
+[node name="MalKorelaMalBirdo_1" parent="Colisionables/Node2D" instance=ExtResource("6_xvooo")]
+position = Vector2(222, 662)
+
+[node name="MalKorelaMalBirdo_2" parent="Colisionables/Node2D" instance=ExtResource("6_xvooo")]
+position = Vector2(225, 533)
+
+[node name="Obstaculos" type="Node2D" parent="Colisionables"]
+
+[node name="bloko1x3" parent="Colisionables/Obstaculos" instance=ExtResource("7_7t5bf")]
+position = Vector2(393, 592)
+rotation = 0.000804573
+script = null
+
+[node name="HBox" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vida" type="Label" parent="HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Debug" type="Label" parent="HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)

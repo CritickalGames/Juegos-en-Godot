@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://caxvbrmg032x3"]
+[gd_scene load_steps=13 format=3 uid="uid://caxvbrmg032x3"]
 
 [ext_resource type="Script" path="res://Escenas/Scripts/main_game.gd" id="1_lwcir"]
 [ext_resource type="Texture2D" uid="uid://cn1f4kfjj8hu7" path="res://Recursos/Graphics/Snake_spritesheet.png" id="1_nk10s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ddh5feyyv7evl" path="res://Recursos/Graphics/grass.png" id="4_fyfon"]
 [ext_resource type="PackedScene" uid="uid://l3e14drvi8da" path="res://Escenas/poentaro.tscn" id="5_nt1xa"]
 [ext_resource type="AudioStream" uid="uid://d3msccsh3mfxx" path="res://Recursos/Sound/crunch.wav" id="6_ob4fl"]
+[ext_resource type="PackedScene" uid="uid://umcwuq02phy0" path="res://Escenas/menu_Pausa.tscn" id="7_0we3f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pg4q8"]
 texture = ExtResource("1_nk10s")
@@ -77,5 +78,9 @@ stretch_mode = 1
 
 [node name="KrakaSono" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ob4fl")
+
+[node name="Menu_Pausa" parent="." instance=ExtResource("7_0we3f")]
+z_index = 100
+position = Vector2(400, 400)
 
 [connection signal="timeout" from="SerpentoTiktako" to="." method="_on_serpento_tiktako_timeout"]

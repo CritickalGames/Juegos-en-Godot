@@ -1,0 +1,102 @@
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://bkikr31vhmb6x"]
+
+[ext_resource type="Texture2D" uid="uid://btyxdukjmcu7r" path="res://Bienes/Spritesheet/set1x1.png" id="1_hk6o3"]
+[ext_resource type="Texture2D" uid="uid://bqgcdibbp0gf6" path="res://Bienes/Spritesheet/set1x2Horizontal.png" id="2_lvqlf"]
+[ext_resource type="Texture2D" uid="uid://c16n8csncye66" path="res://Bienes/Spritesheet/set1x3Horizontal.png" id="3_uoadu"]
+[ext_resource type="Texture2D" uid="uid://kmfa8dnswcpk" path="res://Bienes/Spritesheet/set1x3Vertical.png" id="4_1nx1b"]
+[ext_resource type="Texture2D" uid="uid://dggtpet1lkki" path="res://Bienes/Spritesheet/set2x2.png" id="5_fd7us"]
+[ext_resource type="Texture2D" uid="uid://ckghymrm2o1ae" path="res://Bienes/Spritesheet/set2x3Horizontal.png" id="6_jgq58"]
+[ext_resource type="Texture2D" uid="uid://bawovi0pxc17a" path="res://Bienes/Spritesheet/set2x3Vertical.png" id="7_cbu7d"]
+[ext_resource type="PackedScene" uid="uid://d0peu2foch5xh" path="res://Escenas/EscenasTile/tiles.tscn" id="8_hgmwf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri04f"]
+texture = ExtResource("1_hk6o3")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7ib6"]
+texture = ExtResource("2_lvqlf")
+texture_region_size = Vector2i(140, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b5aqa"]
+texture = ExtResource("3_uoadu")
+texture_region_size = Vector2i(220, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mae5"]
+texture = ExtResource("4_1nx1b")
+texture_region_size = Vector2i(70, 220)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw5k8"]
+texture = ExtResource("5_fd7us")
+texture_region_size = Vector2i(140, 140)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ouhtw"]
+texture = ExtResource("6_jgq58")
+texture_region_size = Vector2i(220, 140)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nctww"]
+texture = ExtResource("7_cbu7d")
+texture_region_size = Vector2i(140, 220)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lxb4p"]
+scenes/1/scene = ExtResource("8_hgmwf")
+
+[resource]
+tile_size = Vector2i(70, 70)
+sources/1 = SubResource("TileSetAtlasSource_ri04f")
+sources/2 = SubResource("TileSetAtlasSource_r7ib6")
+sources/3 = SubResource("TileSetAtlasSource_b5aqa")
+sources/4 = SubResource("TileSetAtlasSource_2mae5")
+sources/5 = SubResource("TileSetAtlasSource_uw5k8")
+sources/6 = SubResource("TileSetAtlasSource_ouhtw")
+sources/7 = SubResource("TileSetAtlasSource_nctww")
+sources/8 = SubResource("TileSetScenesCollectionSource_lxb4p")

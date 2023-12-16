@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://umcwuq02phy0"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/menu_Pausa.gd" id="1_nsb3p"]
+
+[node name="Menu_Pausa" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_nsb3p")
+
+[node name="VBOX_Menu_Pausa" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBOX_Menu_Pausa"]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="VBOX_Menu_Pausa"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Volver_A_Menu" type="Button" parent="VBOX_Menu_Pausa"]
+layout_mode = 2
+text = "Volver al menú principal"
+
+[connection signal="pressed" from="VBOX_Menu_Pausa/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBOX_Menu_Pausa/Volver_A_Menu" to="." method="_on_volver_a_menu_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0peu2foch5xh"]
+
+[ext_resource type="Texture2D" uid="uid://bss1ebfkcqece" path="res://Bienes/Spritesheet/spritesheet_tiles.png" id="1_ryh0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tot7x"]
+size = Vector2(69.7115, 67.9504)
+
+[node name="SueloConPasto" type="Node2D"]
+
+[node name="SpritesheetTiles" type="Sprite2D" parent="."]
+texture = ExtResource("1_ryh0x")
+region_enabled = true
+region_rect = Rect2(280, 70, 70, 70)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SpritesheetTiles"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpritesheetTiles/StaticBody2D"]
+position = Vector2(-0.092308, 1.02219)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_tot7x")

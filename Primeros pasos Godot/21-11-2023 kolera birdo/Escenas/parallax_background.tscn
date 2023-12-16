@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://q5rpoof330tc"]
+
+[ext_resource type="Texture2D" uid="uid://su5f7jl7sehr" path="res://Bienes/PNG/Backgrounds/blue_desert.png" id="1_nxxfr"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0, 1)
+texture = ExtResource("1_nxxfr")
+offset = Vector2(512, 511)
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 1024)
